@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import {Todo} from '../components/index';
+import {Todo} from '../../components/index';
 import {connect} from 'react-redux';
-import {getTodos} from '../redux/action'
+import {getTodos} from '../../redux/action'
 
 class App extends Component {
 
     componentDidMount() {
-        this.props.onGetTodos();
+        if(this.props.todos.length === 0){
+            this.props.onGetTodos();
+        }
+        this.props.history.push(`/todos`)
+    }
+
+    handleOnClicks = (id) => {
+        this.props.history.push(`/todos/${id}`)
     }
 
     render() {
         return (
             <div>
-                <h1>Todo List</h1>
+                <h1>ToDo.IO</h1>
                 <ul>
                 {
                     this.props.todos.map((item)=>{
-                        return(<Todo key={item.id} title={item.title}/>)
+                        return(<Todo key={item.id} title={item.title} clicked={this.handleOnClicks.bind(this,item.id)}/>)
                     })
                 }
                 </ul>
@@ -24,7 +31,6 @@ class App extends Component {
         );
     }
 }
-
 
 
 const mapStateToProps = state => {

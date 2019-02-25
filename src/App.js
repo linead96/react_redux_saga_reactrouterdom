@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <Route exact path='/' component={Home} />
-            <Route path ='/about' component={About} />
+          <div className = 'App'>
+            <Route exact path='/todos' component={Home} />
+            <Route path ='/todos/:id' component={About} />
           </div>
         </Router>
       </Provider>

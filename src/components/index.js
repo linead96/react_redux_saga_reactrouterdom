@@ -1,3 +1,3 @@
-import Todo from './Todo';
+import Todo from './Todo/Todo';
 
 export {Todo}

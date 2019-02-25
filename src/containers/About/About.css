@@ -1,0 +1,41 @@
+#back-button{
+    width: 80px;
+    height: 80px;
+    transition: all .1s ease-in-out;
+}
+
+#back-button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+span{
+    font-weight: 700;
+}
+
+#back-button-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+#about-section-container{
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#about-content-container{
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0px 2px 3px #cccccc;
+    padding-top: 5em;
+    transition: all .2s ease-in-out;
+}
+
+#about-content-container:hover {
+    transform: rotate(-5deg) scale(1.1);
+}

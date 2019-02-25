@@ -1,4 +1,17 @@
 li {
-    list-style-type: none;
-    padding: 1em 0;
+    list-style-type: square;
+    padding: 1em 2em;
+    transition: all .1s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.025);
+    box-shadow: 0px 2px 3px #cccccc;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.complete{
+    text-decoration: line-through;
+    font-weight: 700;
 }

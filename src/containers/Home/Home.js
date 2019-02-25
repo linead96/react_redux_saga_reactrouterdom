@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Todo} from '../../components/index';
 import {connect} from 'react-redux';
-import {getTodos} from '../../redux/action'
+import {getTodos} from '../../redux/action';
+import './Home.css';
 
 class Home extends Component {
 
@@ -17,16 +18,24 @@ class Home extends Component {
     }
 
     render() {
+
         return (
             <div>
-                <h1>ToDo.IO</h1>
-                <ul>
-                {
-                    this.props.todos.map((item)=>{
-                        return(<Todo key={item.id} title={item.title} clicked={this.handleOnClicks.bind(this,item.id)}/>)
-                    })
-                }
-                </ul>
+                <h1>TODO.IO</h1>
+                <div id="home-container">
+                    <h2>Todo Lists</h2>
+                    <ul>
+                    {
+                        this.props.todos.map((item)=>{
+                            return(<Todo 
+                                key={item.id} 
+                                title={item.title} 
+                                completed={item.completed}
+                                clicked={this.handleOnClicks.bind(this,item.id)}/>)
+                        })
+                    }
+                    </ul>
+                </div>
             </div>
         );
     }

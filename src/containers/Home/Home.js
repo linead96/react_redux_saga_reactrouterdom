@@ -3,7 +3,7 @@ import {Todo} from '../../components/index';
 import {connect} from 'react-redux';
 import {getTodos} from '../../redux/action'
 
-class App extends Component {
+class Home extends Component {
 
     componentDidMount() {
         if(this.props.todos.length === 0){
@@ -46,4 +46,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

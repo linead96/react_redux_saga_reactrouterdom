@@ -39,3 +39,12 @@ span{
 #about-content-container:hover {
     transform: rotate(-5deg) scale(1.1);
 }
+
+p{
+    margin: 0;
+    padding: 1em 0;
+}
+
+p:nth-of-type(2n+1){
+    background: #f9f9f9;
+}
